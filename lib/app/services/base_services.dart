@@ -1,0 +1,3 @@
+class BaseServices {
+  // DEFINE BASED ON THE NEEDED SERVICES, EG: FIREBASE OR WEB API
+}

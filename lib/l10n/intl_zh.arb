@@ -1,0 +1,16 @@
+{
+    "flutterBaseKit": "基础套件",
+    "onboardingTitle1": "麻省理工学院许可证",
+    "onboardingDesc1": "该项目已根据 MIT 许可证获得许可 - 有关详细信息，请参阅 [LICENSE](https://opensource.org/licenses/MIT) 文件。",
+    "onboardingTitle2": "项目结构",
+    "onboardingDesc2": "使用 [MVVM](https://medium.com/flutterworld/flutter-mvvm-architecture-f8bed2521958) 设计架构的 Flutter 基础套件",
+    "onboardingTitle3": "入门",
+    "onboardingDesc3": "如需 Flutter 开发入门帮助，请查看[在线文档](https://docs.flutter.dev/)，其中提供了教程、示例、移动开发指南以及完整的 API 参考。",
+    "skip": "跳过",
+    "next": "下一个",
+    "getStarted": "开始吧",
+    "homeScreenLabel": "主页",
+    "profileScreenLabel": "轮廓",
+    "english": "英语",
+    "simplifiedChinese": "简体中文"
+}

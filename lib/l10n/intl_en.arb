@@ -1,0 +1,16 @@
+{
+    "flutterBaseKit": "Base Kit",
+    "onboardingTitle1": "MIT License",
+    "onboardingDesc1": "This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) file for details.",
+    "onboardingTitle2": "Project Structure",
+    "onboardingDesc2": "A Flutter Base Kit using [MVVM](https://medium.com/flutterworld/flutter-mvvm-architecture-f8bed2521958) Design Architecture.",
+    "onboardingTitle3": "Getting Started",
+    "onboardingDesc3": "For help getting started with Flutter development, view the [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.",
+    "skip": "skip",
+    "next": "next",
+    "getStarted": "get started",
+    "homeScreenLabel": "Home",
+    "profileScreenLabel": "Profile",
+    "english": "English",
+    "simplifiedChinese": "Simplified chinese"
+}
