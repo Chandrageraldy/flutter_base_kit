@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Chandrageraldy/flutter_base_kit/blob/a43fb4db683bfbbb72e8774d1755fe5c465843fd/preview.png" alt="flutter-base-kit-preview-image"/>
+  <img src="https://github.com/Chandrageraldy/flutter_base_kit/blob/7c2c4fc7ad77c173efeab5ae810416ed1213db0c/preview.png" alt="flutter-base-kit-preview-image"/>
 </p>
 
 <p align="center">
