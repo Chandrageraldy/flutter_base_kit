@@ -68,19 +68,6 @@ extension _Actions on _LoginPageState {
   }
 }
 
-// * ------------------------ PrivateMethods -------------------------
-extension _PrivateMethods on _LoginPageState {
-  // void navigateBasedOnState() {
-  //   // final isVerified = FirebaseAuth.instance.currentUser?.emailVerified ?? false;
-  //   // print(isVerified);
-  //   // if (isVerified) {
-  //   //   context.go(NavigatePath.homeScreen);
-  //   // } else {
-  //   //   context.go(NavigatePath.emailVerificationScreen);
-  //   // }
-  // }
-}
-
 // * ------------------------ WidgetFactories ------------------------
 extension _WidgetFactories on _LoginPageState {
   // App Title Label

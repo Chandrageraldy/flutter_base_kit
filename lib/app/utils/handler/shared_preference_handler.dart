@@ -75,6 +75,7 @@ class SharedPreferenceHandler {
     ]);
   }
 
+  // Logout
   Future<void> logout() async {
     if (_sharedPreferences == null) return;
 

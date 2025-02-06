@@ -22,13 +22,16 @@ class UserService extends SupabaseBaseService {
   Future<Response> createUserProfile({required UserProfileModel model}) {
     return callSupabaseDB(
       requestType: RequestType.POST,
+      table: 'user',
       requestBody: model.toJson(),
-      queryBuilder: supabase.from('user'),
     );
   }
 
   Future<Response> getUserProfile({required String userId}) {
     return callSupabaseDB(
-        requestType: RequestType.GET, queryBuilder: supabase.from('user'), filters: {'userId': userId});
+      requestType: RequestType.GET,
+      table: 'user',
+      filters: {'userId': userId},
+    );
   }
 }

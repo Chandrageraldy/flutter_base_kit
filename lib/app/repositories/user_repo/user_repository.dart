@@ -52,6 +52,7 @@ extension _PrivateMethods on UserRepository {
     UserProfileModel model = UserProfileModel.fromJson(user[0]);
 
     await sharedPreferenceHandler.putUser(model);
-    // print(sharedPreferenceHandler.getUser());
+    // ignore: avoid_print
+    print(sharedPreferenceHandler.getUser());
   }
 }

@@ -4,6 +4,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_base_kit/app/assets/exporter/exporter_app_general.dart';
 
 abstract class SupabaseBaseService {
+  /// Authenticates a user based on the provided [authType] and optional [requestBody].
+  /// - Supports email sign-up, email login, and logout operations.
+  /// - Returns a [Response] containing the user data on success or an error response on failure.
   Future<Response> authenticate({Map<String, dynamic>? requestBody, required AuthType authType}) async {
     try {
       AuthResponse? response;
@@ -25,37 +28,39 @@ abstract class SupabaseBaseService {
       }
       return Response.complete(response.user);
     } on AuthException catch (e) {
-      debugPrint('Code: ${e.code}');
-      debugPrint(e.message);
       return _handleSupabaseException(e.code);
     } catch (e) {
-      debugPrint(e.toString());
       return Response.error(e);
     }
   }
 
+  /// Executes a database operation on the specified [table] based on the [requestType].
+  /// - Supports GET, POST, PUT, and DELETE requests.
+  /// - Filters are required for PUT and DELETE operations to identify specific records.
+  /// - Returns a [Response] with the retrieved or modified data or an error response if the operation fails.
   Future<Response> callSupabaseDB({
     required RequestType requestType,
+    required String table,
     Map<dynamic, dynamic>? requestBody,
-    SupabaseQueryBuilder? queryBuilder,
     Map<String, dynamic>? filters,
   }) async {
     try {
+      final supabase = Supabase.instance.client;
       final PostgrestList? response;
       PostgrestFilterBuilder? filterBuilder;
 
       switch (requestType) {
         case RequestType.GET:
-          filterBuilder = queryBuilder?.select();
+          filterBuilder = supabase.from(table).select();
         case RequestType.POST:
-          filterBuilder = queryBuilder?.insert(requestBody as Object);
+          filterBuilder = supabase.from(table).insert(requestBody as Object);
         case RequestType.PUT:
-          filterBuilder = queryBuilder?.update(requestBody!);
+          filterBuilder = supabase.from(table).update(requestBody!);
         case RequestType.DELETE:
-          filterBuilder = queryBuilder?.delete();
+          filterBuilder = supabase.from(table).delete();
       }
 
-      if (filters != null && filters.isNotEmpty && filterBuilder != null) {
+      if (filters != null && filters.isNotEmpty) {
         filters.forEach((key, value) {
           if (value != null) {
             filterBuilder = filterBuilder?.eq(key, value);
@@ -72,11 +77,8 @@ abstract class SupabaseBaseService {
 
       return Response.complete(response);
     } on PostgrestException catch (e) {
-      debugPrint('Code: ${e.code}');
-      debugPrint(e.message);
       return _handleSupabaseException(e.code);
     } catch (e) {
-      debugPrint(e.toString());
       return Response.error(e);
     }
   }

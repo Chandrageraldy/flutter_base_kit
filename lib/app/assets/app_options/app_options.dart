@@ -6,9 +6,8 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 // Configure Supabase URL and Key
-const SUPABASE_URL = 'https://nwqqgzcyvmzbxolzuyei.supabase.co';
-const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53cXFnemN5dm16YnhvbHp1eWVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY2MjE4OTgsImV4cCI6MjA1MjE5Nzg5OH0.RYGWJ219DGuPKl3EVBHQw26pahc_7XErx7bMRTnvFX4';
+const SUPABASE_URL = '';
+const SUPABASE_KEY = '';
 
 List<SingleChildWidget> providerAssets() => [
       ChangeNotifierProvider(create: (_) => BaseViewModel()),
