@@ -1,4 +1,9 @@
+import 'package:flutter_base_kit/app/assets/exporter/exporter_app_general.dart';
+
 class StylesManager {
-  static const defaultPadding = 16.0;
-  static const defaultSpacing = 16.0;
+  // Padding
+  static const kPadd16 = EdgeInsets.all(16.0);
+
+  // Spacing
+  static const kSpac16 = 16.0;
 }

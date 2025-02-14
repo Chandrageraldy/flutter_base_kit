@@ -14,11 +14,11 @@ abstract class BaseStatefulState<Screen extends BaseStatefulPage> extends State<
 
   Widget? floatingActionButton() => null;
 
-  EdgeInsets defaultPadding() => const EdgeInsets.all(StylesManager.defaultPadding);
+  EdgeInsets defaultPadding() => StylesManager.kPadd16;
 
   Color backgroundColor() => context.theme.scaffoldBackgroundColor;
 
-  bool topSafeAreaEnabled() => true;
+  bool topSafeAreaEnabled() => false;
 
   bool bottomSafeAreaEnabled() => true;
 
@@ -34,8 +34,8 @@ abstract class BaseStatefulState<Screen extends BaseStatefulPage> extends State<
       body: SafeArea(
         left: false,
         right: false,
-        top: hasDefaultPadding() ? topSafeAreaEnabled() : false,
-        bottom: hasDefaultPadding() ? bottomSafeAreaEnabled() : false,
+        top: topSafeAreaEnabled(),
+        bottom: bottomSafeAreaEnabled(),
         child: GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Padding(

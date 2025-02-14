@@ -32,7 +32,7 @@ class _SignUpPageState extends BaseStatefulState<SignUpPage> {
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        spacing: StylesManager.defaultSpacing,
+        spacing: StylesManager.kSpac16,
         children: [getAppTitleLabel(), getFormBuilder()],
       ),
     );
@@ -76,7 +76,7 @@ extension _WidgetFactories on _SignUpPageState {
     return FormBuilder(
       key: _formKey,
       child: Column(
-        spacing: StylesManager.defaultSpacing,
+        spacing: StylesManager.kSpac16,
         children: [getEmailTextField(), getPasswordTextField(), getSignUpButton(), getLogInButton()],
       ),
     );
@@ -133,7 +133,7 @@ extension _WidgetFactories on _SignUpPageState {
 class _Styles {
   // App Title Text Style
   static getAppTitleTextStyle() {
-    return Quicksand.bold.withSize(FontSizes.extraMassive).copyWith(color: ColorManager.primaryColor);
+    return Quicksand.bold.withSize(FontSizes.extraMassive).copyWith(color: ColorManager.blueColor);
   }
 
   // Button Label Text Style

@@ -31,7 +31,7 @@ class _LoginPageState extends BaseStatefulState<LoginPage> {
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        spacing: StylesManager.defaultSpacing,
+        spacing: StylesManager.kSpac16,
         children: [getAppTitleLabel(), getFormBuilder()],
       ),
     );
@@ -83,7 +83,7 @@ extension _WidgetFactories on _LoginPageState {
     return FormBuilder(
       key: _formKey,
       child: Column(
-        spacing: StylesManager.defaultSpacing,
+        spacing: StylesManager.kSpac16,
         children: [
           getEmailTextField(),
           getPasswordTextField(),
@@ -166,7 +166,7 @@ extension _WidgetFactories on _LoginPageState {
 class _Styles {
   // App Title Text Style
   static getAppTitleTextStyle() {
-    return Quicksand.bold.withSize(FontSizes.extraMassive).copyWith(color: ColorManager.primaryColor);
+    return Quicksand.bold.withSize(FontSizes.extraMassive).copyWith(color: ColorManager.blueColor);
   }
 
   // Button Label Text Style

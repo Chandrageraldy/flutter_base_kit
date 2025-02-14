@@ -30,6 +30,20 @@
 
 With this kit, you can rapidly develop scalable and professional Flutter applications with minimal boilerplate code. Whether you're building an MVP or a fully-fledged app, the Flutter Base Kit will ensure a smooth, efficient development journey.
 
+### Configuring New Project with The Flutter Base Kit
+
+1. Open the Flutter Base Kit [Repository](https://github.com/Chandrageraldy/flutter_base_kit)
+2. Clone the repository using Git or download the ZIP file and extract it.
+3. Create new project and copy the following files and folder from the Flutter Base Kit to your new project:
+
+- `lib` folder
+- `fonts` folder
+- `pubspec.yaml` file
+- `analysis_options.yaml` file
+
+4. Replace all instances of 'flutter_base_kit' with your new project name by pressing `Ctrl + Shift + H`.
+5. Run the `flutter pub get` command to install dependencies.
+
 ## 🛠️ Project Architecture Pattern
 
 For clear seperation of concerns and maintainability, [MVVM](https://medium.com/flutterworld/flutter-mvvm-architecture-f8bed2521958), aka Model-View-ViewModel is adapted as the base project architecture pattern.

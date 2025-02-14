@@ -63,6 +63,6 @@ extension _PrivateMethods on _SplashScreenState {
 abstract class _Styles {
   // App Title Text Style
   static getAppTitleTextStyle() {
-    return Quicksand.bold.withSize(FontSizes.extraMassive).copyWith(color: ColorManager.primaryColor);
+    return Quicksand.bold.withSize(FontSizes.extraMassive).copyWith(color: ColorManager.blueColor);
   }
 }

@@ -104,7 +104,7 @@ extension _WidgetFactories on _OnboardingPageState {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(_Styles.dotIndicatorWidth),
-          color: isActive ? ColorManager.primaryColor : Colors.black),
+          color: isActive ? ColorManager.blueColor : Colors.black),
       width: isActive ? _Styles.dotIndicatorWidth * 2 : _Styles.dotIndicatorWidth,
       height: _Styles.dotIndicatorWidth,
     );
@@ -128,7 +128,7 @@ abstract class _Styles {
   // Skip & Next Button Style
   static ButtonStyle getButtonStyle(BuildContext context) {
     return TextButton.styleFrom(
-        textStyle: Quicksand.bold.withSize(FontSizes.medium), foregroundColor: ColorManager.primaryColor);
+        textStyle: Quicksand.bold.withSize(FontSizes.medium), foregroundColor: ColorManager.blueColor);
   }
 
   // Dot Indicator Style

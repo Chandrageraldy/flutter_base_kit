@@ -10,28 +10,28 @@ class OnboardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: StylesManager.defaultSpacing,
-      children: [getFlutterLogo(), getTitleLabel(), getDescriptionLabel()],
+      spacing: StylesManager.kSpac16,
+      children: [getOnboardImage(), getTitleLabel(), getDescriptionLabel()],
     );
   }
 }
 
 // * ------------------------ WidgetFactories ------------------------
 extension _WidgetFactories on OnboardContent {
+  // Flutter Logo Image
+  Widget getOnboardImage() {
+    return Image.asset(
+      onboardImage,
+      width: _Styles.onboardImageSize,
+      height: _Styles.onboardImageSize,
+    );
+  }
+
   // Title Label
   Widget getTitleLabel() {
     return Text(
       onboardTitle,
       style: _Styles.getTitleLabelTextStyle(),
-    );
-  }
-
-  // Flutter Logo Image
-  Widget getFlutterLogo() {
-    return Image.asset(
-      onboardImage,
-      width: _Styles.onboardImageSize,
-      height: _Styles.onboardImageSize,
     );
   }
 
@@ -52,7 +52,7 @@ abstract class _Styles {
 
   // Title Text Style
   static TextStyle getTitleLabelTextStyle() {
-    return Quicksand.bold.withSize(FontSizes.massive).copyWith(color: ColorManager.primaryColor);
+    return Quicksand.bold.withSize(FontSizes.massive).copyWith(color: ColorManager.blueColor);
   }
 
   // Description Text Style
