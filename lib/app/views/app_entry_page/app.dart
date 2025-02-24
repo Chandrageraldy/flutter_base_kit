@@ -55,7 +55,7 @@ class _AppWrapperState extends State<AppWrapper> {
             final scale = mediaQueryData.textScaler;
             return MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaler: scale),
-              child: child ?? const SizedBox(),
+              child: child ?? StylesManager.kEmptyWidget,
             );
           },
         );

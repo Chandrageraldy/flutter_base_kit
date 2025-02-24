@@ -102,9 +102,8 @@ extension _WidgetFactories on _OnboardingPageState {
   // Dot Indicator
   Widget getDotIndicator(bool isActive) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(_Styles.dotIndicatorWidth),
-          color: isActive ? ColorManager.blueColor : Colors.black),
+      decoration:
+          BoxDecoration(borderRadius: StylesManager.kRadius8, color: isActive ? ColorManager.blueColor : Colors.black),
       width: isActive ? _Styles.dotIndicatorWidth * 2 : _Styles.dotIndicatorWidth,
       height: _Styles.dotIndicatorWidth,
     );
@@ -115,7 +114,7 @@ extension _WidgetFactories on _OnboardingPageState {
       children: List.generate(
         onboardData.length,
         (index) => Padding(
-          padding: const EdgeInsets.all(3),
+          padding: StylesManager.kPadd3,
           child: getDotIndicator(index == pageIndex),
         ),
       ),

@@ -16,7 +16,7 @@ class AdaptiveAlertDialog extends StatelessWidget {
       content: Text(errorMessage),
       actions: actionBuilders,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: StylesManager.kRadius8,
       ),
     );
   }
