@@ -23,6 +23,12 @@ enum Language {
   }
 }
 
-enum RequestType { get, post, put, delete }
-
 enum FormFields { email, password }
+
+class TableName {
+  static String user = 'user';
+}
+
+class TableCol {
+  static String userId = 'userId';
+}

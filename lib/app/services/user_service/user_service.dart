@@ -1,3 +1,4 @@
+import 'package:flutter_base_kit/app/assets/constants/constants.dart';
 import 'package:flutter_base_kit/app/models/auth_model.dart/email_auth_request_model.dart';
 import 'package:flutter_base_kit/app/models/response_model.dart';
 import 'package:flutter_base_kit/app/models/user_profile_model/user_profile_model.dart';
@@ -22,7 +23,7 @@ class UserService extends SupabaseBaseService {
   Future<Response> createUserProfile({required UserProfileModel model}) {
     return callSupabaseDB(
       requestType: RequestType.POST,
-      table: 'user',
+      table: TableName.user,
       requestBody: model.toJson(),
     );
   }
@@ -30,8 +31,8 @@ class UserService extends SupabaseBaseService {
   Future<Response> getUserProfile({required String userId}) {
     return callSupabaseDB(
       requestType: RequestType.GET,
-      table: 'user',
-      filters: {'userId': userId},
+      table: TableName.user,
+      filters: {TableCol.userId: userId},
     );
   }
 }

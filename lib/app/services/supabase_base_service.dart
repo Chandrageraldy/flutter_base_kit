@@ -28,6 +28,7 @@ abstract class SupabaseBaseService {
       }
       return Response.complete(response.user);
     } on AuthException catch (e) {
+      debugPrint(e.message);
       return _handleSupabaseException(e.code);
     } catch (e) {
       return Response.error(e);
@@ -43,24 +44,33 @@ abstract class SupabaseBaseService {
     required String table,
     Map<dynamic, dynamic>? requestBody,
     Map<String, dynamic>? filters,
+    String? column,
   }) async {
     try {
       final supabase = Supabase.instance.client;
-      final PostgrestList? response;
+      final PostgrestList response;
       PostgrestFilterBuilder? filterBuilder;
 
       switch (requestType) {
         case RequestType.GET:
-          filterBuilder = supabase.from(table).select();
+          if (column != null) {
+            filterBuilder = supabase.from(table).select(column);
+          } else {
+            filterBuilder = supabase.from(table).select();
+          }
+          break;
         case RequestType.POST:
           filterBuilder = supabase.from(table).insert(requestBody as Object);
+          break;
         case RequestType.PUT:
           filterBuilder = supabase.from(table).update(requestBody!);
+          break;
         case RequestType.DELETE:
           filterBuilder = supabase.from(table).delete();
+          break;
       }
 
-      if (filters != null && filters.isNotEmpty) {
+      if (filters != null) {
         filters.forEach((key, value) {
           if (value != null) {
             filterBuilder = filterBuilder?.eq(key, value);
@@ -68,7 +78,11 @@ abstract class SupabaseBaseService {
         });
       }
 
-      response = await filterBuilder?.select() ?? [];
+      if (column != null) {
+        response = await filterBuilder ?? [];
+      } else {
+        response = await filterBuilder?.select() ?? [];
+      }
 
       // Return urgent error if response is empty
       if (response.isEmpty) {
@@ -77,6 +91,7 @@ abstract class SupabaseBaseService {
 
       return Response.complete(response);
     } on PostgrestException catch (e) {
+      debugPrint(e.message);
       return _handleSupabaseException(e.code);
     } catch (e) {
       return Response.error(e);
