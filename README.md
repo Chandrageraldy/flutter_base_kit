@@ -72,12 +72,21 @@ For clear seperation of concerns and maintainability, [MVVM](https://medium.com/
 
 - The model data class defines the format or structure for the data to be utilized.
 ```dart
-class ErrorModel {
+class Response<T, V> {
+  final ResponseStatus _status;
+  T? _data;
+  V? _error;
 
-  TokenModel({this.errorCode, this.errorMessage});
+  Response.complete(T? data)
+      : _status = ResponseStatus.COMPLETE,
+        _data = data;
+  Response.error(V? error)
+      : _status = ResponseStatus.ERROR,
+        _error = error;
 
-  String? errorCode;
-  String? errorMessage;
+  V? get error => _error;
+  T? get data => _data;
+  ResponseStatus get status => _status;
 }
 ```
 - The Response model is designed to represent complete and error states of a network request in a clean and consistent way.
